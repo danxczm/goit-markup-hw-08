@@ -1,202 +1,217 @@
 .backdrop {
-	position: fixed;
-	z-index: 1;
+  overflow-y: scroll;
+  position: fixed;
+  z-index: 1;
 
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--backdrop-bg);
-	transition: opacity 800ms var(--cubic-value), visibility 800ms var(--cubic-value);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--backdrop-bg);
+  transition: opacity 800ms var(--cubic-value), visibility 800ms var(--cubic-value);
 }
 
 .modal {
-	position: absolute;
-	top: 50%;
-	left: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 
-	width: 528px;
-	height: 581px;
-	padding: 40px;
+  max-width: 100%;
+  width: 450px;
+  height: 609px;
+  padding: 40px;
 
-	background-color: var(--wite-bg-color);
-	box-shadow: var(--card-shadow);
-	border-radius: 4px;
+  background-color: var(--white-bg-color);
+  box-shadow: var(--card-shadow);
+  border-radius: 4px;
 
-	transform: scale(1) translate(-50%, -50%);
+  transform: scale(1) translate(-50%, -50%);
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+    height: 581px;
+  }
 }
 
 .modal__close-button {
-	position: absolute;
-	top: 8px;
-	right: 8px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 
-	@extend %stance-list;
+  @extend %stance-list;
 
-	width: 30px;
-	height: 30px;
+  width: 30px;
+  height: 30px;
 
-	border-radius: 50%;
-	background-color: transparent;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	cursor: pointer;
-	color: var(--accent-color);
-	transition: fill 250ms var(--cubic-value);
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: var(--accent-color);
+  transition: fill 250ms var(--cubic-value);
 
-	&:hover,
-	&:focus {
-		fill: currentColor;
-	}
+  &:hover,
+  &:focus {
+    fill: currentColor;
+  }
 }
 
 .modal__title {
-	display: block;
-	margin-bottom: 12px;
+  display: block;
+  margin-bottom: 12px;
 
-	@include fonts(700, 20px, 1.15, 0.03em);
-	color: var(--primary-text-color);
+  @include fonts(700, 20px, 1.15, 0.03em);
+  color: var(--primary-text-color);
 }
 
 .modal-form__wrap {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .modal-form__user-info {
-	position: relative;
+  position: relative;
 
-	display: flex;
-	flex-direction: column;
-	
-	&:not(:last-child) {
-		margin-bottom: 10px;
-	}
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
 
 .modal-form__label {
-	display: block;
-	text-align: left;
-	margin-bottom: 4px;
+  display: block;
+  text-align: left;
+  margin-bottom: 4px;
 
-	@include fonts(400, 12px, 1.16, 0.01em);
-	color: var(--secondary-text-color);
+  @include fonts(400, 12px, 1.16, 0.01em);
+  color: var(--secondary-text-color);
 }
 
 .modal-form__input {
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 
-	padding-left: 42px;
+  padding-left: 42px;
 
-	width: 100%;
-	height: 40px;
+  width: 100%;
+  height: 40px;
 
-	border: 1px solid rgba(33, 33, 33, 0.2);
-	border-radius: 4px;
-	outline: none;
-	transition: border-color 250ms var(--cubic-value);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 250ms var(--cubic-value);
 
-	&:focus {
-		border-color: var(--accent-color);
-	}
+  &:focus {
+    border-color: var(--accent-color);
+  }
 }
 
 .modal-form__input-icon {
-	position: absolute;
-	top: 50%;
-	left: 12px;
-	transition: fill 250ms var(--cubic-value);
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transition: fill 250ms var(--cubic-value);
 
-	.modal-form__input:focus + & {
-		fill: var(--accent-color);
-	}
+  .modal-form__input:focus + & {
+    fill: var(--accent-color);
+  }
 }
 
 .modal-form__textarea {
-	width: 100%;
-	height: 120px;
+  width: 100%;
+  height: 120px;
 
-	padding: 12px 16px;
+  padding: 12px 16px;
 
-	border: 1px solid rgba(33, 33, 33, 0.2);
-	border-radius: 4px;
-	resize: none;
-	outline: none;
-	transition: border-color 250ms var(--cubic-value);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  outline: none;
+  transition: border-color 250ms var(--cubic-value);
 
-	&:focus {
-		border-color: var(--accent-color);
-	}
+  &:focus {
+    border-color: var(--accent-color);
+  }
 
-	&::placeholder {
-		@include fonts(400, 14px, 1.14, 0.01em);
-	
-		color: rgba(117, 117, 117, 0.5);
-	}
+  &::placeholder {
+    @include fonts(400, 14px, 1.14, 0.01em);
+
+    color: rgba(117, 117, 117, 0.5);
+  }
 }
 
 .modal-policy {
-	@extend %stance-list;
-	margin-bottom: 30px;
+  @extend %stance-list;
+  margin-bottom: 30px;
 }
 
 .modal-policy__label {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 
-	@include fonts(400, 14px, 1.7, 0.03em);
-	color: var(--secondary-text-color);
+  @include fonts(400, 12px, 1.16, 0.03em);
+  color: var(--secondary-text-color);
 
-	.modal-policy__icon-check {
-		display: flex;
-		align-items: center;
-	
-		width: 16px;
-		height: 15px;
-		border: 2px solid #212121;
-		border-radius: 2px;
-		margin-right: 8px;
-	}
+  .modal-policy__icon-check {
+    display: flex;
+    align-items: center;
+
+    width: 16px;
+    height: 15px;
+    border: 2px solid #212121;
+    border-radius: 2px;
+    margin-right: 8px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include fonts(400, 14px, 1.7, 0.03em);
+  }
 }
 
 .modal-policy__icon-check {
-	fill: #ffffff;
+  fill: #ffffff;
 }
 
 .modal-policy__check:checked + .modal-policy__label .modal-policy__icon-check {
-	background-color: var(--accent-color);
-	border: none;
-	transition: background-color 250ms var(--cubic-value);
+  background-color: var(--accent-color);
+  border: none;
+  transition: background-color 250ms var(--cubic-value);
 }
 
 .modal-policy__link {
-	@include fonts(400, 14px, 1.7, 0.03em);
-	text-decoration-skip-ink: none;
-	color: var(--accent-color);
+  @include fonts(400, 12px, 1.16, 0.03em);
+  text-decoration-skip-ink: none;
+  color: var(--accent-color);
+
+  @media screen and (min-width: 1200px) {
+    @include fonts(400, 14px, 1.7, 0.03em);
+  }
 }
 
 .modal-policy__submit-button {
-	padding: 10px 55px;
-	min-width: 200px;
+  padding: 10px 55px;
+  min-width: 200px;
 
-	background-color: var(--accent-color);
-	color: var(--white-text-color);
-	border-radius: 4px;
-	border: 1px solid transparent;
-	cursor: pointer;
-	@include fonts(700, 16px, 1.8, 0.06em);
-	
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-	transition: background-color 250ms var(--cubic-value),box-shadow 250ms var(--cubic-value);
+  background-color: var(--accent-color);
+  color: var(--white-text-color);
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  @include fonts(700, 16px, 1.8, 0.06em);
 
-	&:hover,
-	&:focus {
-		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15);
-		background-color: var(--hover-accent-color);
-	}
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms var(--cubic-value), box-shadow 250ms var(--cubic-value);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.15);
+    background-color: var(--hover-accent-color);
+  }
 }
 
 .is-hidden {
-	opacity: 0;
-	visibility: hidden;
-	pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }

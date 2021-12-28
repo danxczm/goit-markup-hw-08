@@ -8,9 +8,11 @@
 @import './utils/placeholder';
 @import './utils/mixins';
 @import './components/section-title';
+@import './components/logo';
 
 /* ----------------NAV---------------- */
 @import './components/header';
+@import './components/mobile-header';
 
 /* ----------------FOOTER---------------- */
 @import './components/footer';

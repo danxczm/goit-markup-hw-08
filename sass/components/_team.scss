@@ -1,76 +1,92 @@
 .section--team-background {
-	background-color: var(--secondary-bg-color);
+  background-color: var(--secondary-bg-color);
 }
 
 .team {
-	display: flex;
-	flex-wrap: wrap;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
 }
 
 .team__item {
-	box-shadow: var(--card-shadow);
-	border-radius: 0px 0px 4px 4px;
+  box-shadow: var(--card-shadow);
+  border-radius: 0px 0px 4px 4px;
 
-	&:not(:last-child) {
-		margin-right: 30px;
-	}
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc(100% / 2 - 30px);
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc(100% / 4 - 30px);
+  }
 }
 
 .team__wrap {
-	padding-top: 30px;
-	padding-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
-	background-color: var(--wite-bg-color);
-	text-align: center;
-	border-radius: 0px 0px 4px 4px;
+  background-color: var(--white-bg-color);
+  text-align: center;
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team__title {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 
-	color: var(--primary-text-color);
-	@include fonts(500, 16px, 1.18, 0.03em);
+  color: var(--primary-text-color);
+  @include fonts(500, 16px, 1.18, 0.03em);
 }
 
 .team__description {
-	margin-bottom: 16px;
-	
-	color: var(--secondary-text-color);
-	@include fonts(400, 16px, 1.18, 0.03em);
+  margin-bottom: 16px;
+
+  color: var(--secondary-text-color);
+  @include fonts(400, 16px, 1.18, 0.03em);
 }
 
 .socials {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .socials__item {
-	width: 44px;
-	height: 44px;
+  width: 44px;
+  height: 44px;
 
-	&:not(:first-child) {
-		margin-left: 10px;
-	}
+  &:not(:first-child) {
+    margin-left: 10px;
+  }
 }
 
 .socials__link {
-	@extend %stance-list;
-	
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-	background-color: var(--wite-bg-color);
-	color: var(--icons-color);
+  @extend %stance-list;
 
-	transition: color 250ms var(--cubic-value), background-color 250ms var(--cubic-value);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--white-bg-color);
+  color: var(--icons-color);
 
-	&:hover,
-	&:focus {
-		background-color: var(--accent-color);
-		color: var(--wite-bg-color);
-	}
+  transition: color 250ms var(--cubic-value), background-color 250ms var(--cubic-value);
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+    color: var(--white-bg-color);
+  }
 }
 
 .socials__icon {
-	fill: currentColor;
+  fill: currentColor;
 }
