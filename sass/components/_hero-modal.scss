@@ -1,7 +1,9 @@
 .backdrop {
-  overflow-y: scroll;
   position: fixed;
+  overflow-y: scroll;
   z-index: 1;
+
+  // padding: 93px 15px 93px 15px;
 
   top: 0;
   left: 0;
@@ -16,8 +18,8 @@
   top: 50%;
   left: 50%;
 
-  max-width: 100%;
-  width: 450px;
+  max-width: 450px;
+
   height: 609px;
   padding: 40px;
 
@@ -28,18 +30,17 @@
   transform: scale(1) translate(-50%, -50%);
 
   @media screen and (min-width: 1200px) {
-    width: 528px;
+    max-width: 528px;
     height: 581px;
   }
 }
 
 .modal__close-button {
   position: absolute;
-  z-index: 10;
   top: 8px;
   right: 8px;
 
-  @extend %stance-list;
+  // @extend %stance-list; проба
 
   width: 30px;
   height: 30px;
@@ -55,6 +56,14 @@
   &:focus {
     fill: currentColor;
   }
+}
+
+.modal__close-icon {
+  position: absolute;
+  // top: 50%;
+  // left: 50%;
+
+  transform: translate(-50%, -50%);
 }
 
 .modal__title {
@@ -216,7 +225,3 @@
   visibility: hidden;
   pointer-events: none;
 }
-
-// .modal__close-icon {
-//   z-index: 10;
-// }

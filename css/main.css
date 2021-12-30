@@ -107,7 +107,7 @@ a {
   margin: -1px;
 }
 
-.socials-bottom__link, .subscribe-form__button, .modal__close-button, .modal-policy, .advantages__icon, .we-make__description, .socials__link, .clients__link {
+.socials-bottom__link, .subscribe-form__button, .modal-policy, .advantages__icon, .we-make__description, .socials__link, .clients__link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -722,7 +722,7 @@ a {
 
 @media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(/images/hero_img_x2.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero_img_x2.jpg);
   }
 }
 
@@ -776,8 +776,8 @@ a {
 }
 
 .backdrop {
-  overflow-y: scroll;
   position: fixed;
+  overflow-y: scroll;
   z-index: 1;
   top: 0;
   left: 0;
@@ -791,8 +791,7 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  max-width: 100%;
-  width: 450px;
+  max-width: 450px;
   height: 609px;
   padding: 40px;
   background-color: var(--white-bg-color);
@@ -803,7 +802,7 @@ a {
 
 @media screen and (min-width: 1200px) {
   .modal {
-    width: 528px;
+    max-width: 528px;
     height: 581px;
   }
 }
@@ -824,6 +823,11 @@ a {
 
 .modal__close-button:hover, .modal__close-button:focus {
   fill: currentColor;
+}
+
+.modal__close-icon {
+  position: absolute;
+  transform: translate(-50%, -50%);
 }
 
 .modal__title {
